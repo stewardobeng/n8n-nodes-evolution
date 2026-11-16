@@ -1,0 +1,55 @@
+{
+  "name": "@steprotech/n8n-nodes-evolution",
+  "version": "0.1.1",
+  "description": "Complete n8n node for Evolution API v2: instances, messages, chats, groups, profiles, webhooks and a guarded webhook trigger",
+  "keywords": [
+    "n8n-community-node-package",
+    "evolution",
+    "evolution-api",
+    "whatsapp"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/stewardobeng/n8n-nodes-evolution",
+  "author": {
+    "name": "SteProTECH",
+    "email": "stewardobeng@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stewardobeng/n8n-nodes-evolution.git"
+  },
+  "engines": {
+    "node": ">=18.10"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.js",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/EvolutionApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Evolution/Evolution.node.js",
+      "dist/nodes/Evolution/EvolutionTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.16",
+    "n8n-workflow": "^1.45.0",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/stewardobeng/n8n-nodes-evolution/issues"
+  }
+}
